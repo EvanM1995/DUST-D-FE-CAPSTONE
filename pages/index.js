@@ -1,22 +1,26 @@
-// import { Button } from 'react-bootstrap'; // TODO: COMMENT IN FOR AUTH
-// import { signOut } from '../utils/auth'; // TODO: COMMENT IN FOR AUTH
-// import { useAuth } from '../utils/context/authContext'; // TODO: COMMENT IN FOR AUTH
+import { useEffect, useState } from 'react';
+import getAlbums from '../api/albumData';
+import { useAuth } from '../utils/context/authContext';
+import AlbumCard from '../components/AlbumCard';
 
 function Home() {
-  // const { user } = useAuth(); // TODO: COMMENT IN FOR AUTH
+  const [records, setRecords] = useState([]);
 
-  const user = { displayName: 'Dr. T' }; // TODO: COMMENT OUT FOR AUTH
+  const { user } = useAuth();
+
+  const getAllTheAlbums = () => {
+    getAlbums(user.uid).then(setRecords);
+  };
+
+  useEffect(() => {
+    getAllTheAlbums();
+  }, []);
+
   return (
-    <div
-      className="text-center d-flex flex-column justify-content-center align-content-center"
-      style={{
-        height: '90vh',
-        padding: '30px',
-        maxWidth: '400px',
-        margin: '0 auto',
-      }}
-    >
-      <h1>Hello {user.displayName}! </h1>
+    <div className="d-flex flex-wrap">
+      {records.map((record) => (
+        <AlbumCard key={record.firebaseKey} albumObj={record} onUpdate={getAllTheAlbums} />
+      ))}
     </div>
   );
 }
