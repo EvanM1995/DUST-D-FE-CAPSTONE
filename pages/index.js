@@ -1,28 +1,30 @@
 import { useEffect, useState } from 'react';
 import getAlbums from '../api/albumData';
-import { useAuth } from '../utils/context/authContext';
 import AlbumCard from '../components/AlbumCard';
+import { useAuth } from '../utils/context/authContext';
 
-function Home() {
+function Collection() {
   const [records, setRecords] = useState([]);
 
   const { user } = useAuth();
 
-  const getAllTheAlbums = () => {
+  const getAllTheRecords = () => {
     getAlbums(user.uid).then(setRecords);
   };
 
   useEffect(() => {
-    getAllTheAlbums();
+    getAllTheRecords();
   }, []);
 
   return (
-    <div className="d-flex flex-wrap">
-      {records.map((record) => (
-        <AlbumCard key={record.firebaseKey} albumObj={record} onUpdate={getAllTheAlbums} />
-      ))}
+    <div className="text-center my-4">
+      <div className="d-flex flex-wrap">
+        {records.map((record) => (
+          <AlbumCard key={record.firebaseKey} albumObj={record} onUpdate={getAllTheRecords} />
+        ))}
+      </div>
     </div>
   );
 }
 
-export default Home;
+export default Collection;

@@ -4,8 +4,8 @@ import { Card } from 'react-bootstrap';
 
 function AlbumCard({ albumObj }) {
   return (
-    <Card style={{ width: '18rem', margin: '10px' }}>
-      <Card.Img variant="top" src={albumObj.image} alt={albumObj.title} style={{ height: '400px' }} />
+    <Card style={{ width: '20rem', margin: '10px' }}>
+      <Card.Img variant="top" src={albumObj.image} alt={albumObj.title} style={{ height: '340px' }} />
       <Card.Body>
         <Card.Title>{albumObj.title}</Card.Title>
       </Card.Body>
@@ -17,6 +17,7 @@ AlbumCard.propTypes = {
   albumObj: PropTypes.shape({
     image: PropTypes.string,
     title: PropTypes.string,
+    firebaseKey: PropTypes.string,
   }).isRequired,
 };
 
