@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import getAlbums from '../api/albumData';
+import { getAlbums } from '../api/albumData';
 import AlbumCard from '../components/AlbumCard';
 import { useAuth } from '../utils/context/authContext';
 
