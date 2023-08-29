@@ -4,13 +4,13 @@ import { getSingleAlbum } from '../../../api/albumData';
 import AlbumForm from '../../../components/AlbumForm';
 
 export default function EditAlbum() {
-  const [editItem, setEditItem] = useState({});
+  const [editAlbum, setEditAlbum] = useState({});
   const router = useRouter();
   const { firebaseKey } = router.query;
 
   useEffect(() => {
-    getSingleAlbum(firebaseKey).then(setEditItem);
+    getSingleAlbum(firebaseKey).then(setEditAlbum);
   }, [firebaseKey]);
 
-  return (<AlbumForm obj={editItem} />);
+  return (<AlbumForm obj={editAlbum} />);
 }

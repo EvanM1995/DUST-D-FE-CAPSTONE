@@ -52,13 +52,12 @@ const createAlbum = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const getSingleAlbum = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/album.json`, {
-    method: 'POST',
+const getSingleAlbum = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/album/${firebaseKey}.json`, {
+    method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(payload),
   })
     .then((response) => response.json())
     .then((data) => resolve(data))

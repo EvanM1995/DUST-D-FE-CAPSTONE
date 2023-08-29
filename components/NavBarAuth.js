@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
+import PropTypes from 'prop-types';
 import Link from 'next/link';
 import {
   Navbar, Container, Nav, Button,
@@ -30,3 +31,11 @@ export default function NavBarAuth() {
     </Navbar>
   );
 }
+
+NavBarAuth.propTypes = {
+  user: PropTypes.shape({
+    displayName: PropTypes.string,
+    photoURL: PropTypes.string,
+    uid: PropTypes.string,
+  }).isRequired,
+};

@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button, FloatingLabel, Form } from 'react-bootstrap';
 import { useAuth } from '../utils/context/authContext';
 import { createAlbum, updateAlbum } from '../api/albumData';
@@ -16,7 +16,9 @@ function AlbumForm({ obj }) {
   const [formInput, setFormInput] = useState(initialState);
   const router = useRouter();
   const { user } = useAuth();
-
+  useEffect(() => {
+    if (obj.firebaseKey) setFormInput(obj);
+  }, [obj, user]);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormInput((prevState) => ({
