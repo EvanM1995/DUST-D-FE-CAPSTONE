@@ -1,8 +1,8 @@
 {
-  "name": "next-firebase-starter",
+  "name": "dustd",
   "private": true,
   "version": "1.0.0",
-  "author": "Trinity Christiana",
+  "author": "Evan Morgan",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

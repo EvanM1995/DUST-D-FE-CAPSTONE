@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 import { getAlbums } from '../api/albumData';
 import AlbumCard from '../components/AlbumCard';
