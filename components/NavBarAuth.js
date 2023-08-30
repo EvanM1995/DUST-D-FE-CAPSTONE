@@ -21,11 +21,11 @@ export default function NavBarAuth() {
             <Link passHref href="/">
               <Nav.Link>COLLECTION</Nav.Link>
             </Link>
-            <Link passHref href="/pages/profile">
-              <Nav.Link>PROFILE</Nav.Link>
-            </Link>
             <Link passHref href="/album/new">
               <Nav.Link>ADD TO COLLECTION</Nav.Link>
+            </Link>
+            <Link passHref href="/profile">
+              <Nav.Link>PROFILE</Nav.Link>
             </Link>
             <Button variant="dark" onClick={signOut}>LOG OFF</Button>
           </Nav>

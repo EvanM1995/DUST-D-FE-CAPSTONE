@@ -13,11 +13,11 @@ function AlbumCard({ albumObj, onUpdate }) {
 
   return (
     <Card style={{ width: '15rem', margin: '10px' }}>
-      <Card.Img variant="top" src={albumObj.image} alt={albumObj.title} style={{ height: '250px' }} />
+      <Card.Img variant="top" src={albumObj.image} alt={albumObj.title} style={{ height: '230px' }} />
       <Card.Body>
-        <Card.Title>{albumObj.title}</Card.Title>
-        <p>{albumObj.artist}</p>
-        <h6>{albumObj.genre}</h6>
+        <Link href={`/album/${albumObj.firebaseKey}`} passHref>
+          <Button variant="caution" className="m-2">{albumObj.title}</Button>
+        </Link>
         <Button variant="caution" onClick={deleteThisAlbum} className="m-2">
           REMOVE
         </Button>

@@ -17,7 +17,7 @@ function AlbumForm({ obj }) {
   const router = useRouter();
   const { user } = useAuth();
   useEffect(() => {
-    if (obj.firebaseKey) setFormInput(obj);
+    if (obj?.firebaseKey) setFormInput(obj);
   }, [obj, user]);
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -44,7 +44,7 @@ function AlbumForm({ obj }) {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Album</h2>
+      <h2 className="text-white mt-5">{obj?.firebaseKey ? 'UPDATE' : 'ADD'} ALBUM</h2>
 
       <FloatingLabel controlId="floatingInput1" label="Album Name" className="mb-3">
         <Form.Control
@@ -66,18 +66,17 @@ function AlbumForm({ obj }) {
           required
         />
       </FloatingLabel>
-      <FloatingLabel controlId="floatingTextarea" label="Genre" className="mb-3">
+      <FloatingLabel controlId="floatinginput3" label="Genre" className="mb-3">
         <Form.Control
           as="textarea"
           placeholder="Genre"
-          style={{ height: '100px' }}
           name="genre"
           value={formInput.genre}
           onChange={handleChange}
           required
         />
       </FloatingLabel>
-      <FloatingLabel controlId="floatingInput3" label="Artist" className="mb-3">
+      <FloatingLabel controlId="floatingInput4" label="Artist" className="mb-3">
         <Form.Control
           type="text"
           placeholder="Artist"
@@ -88,7 +87,7 @@ function AlbumForm({ obj }) {
         />
       </FloatingLabel>
 
-      <Button type="caution">{obj.firebaseKey ? 'Update' : 'Create'} Album</Button>
+      <Button type="submit" variant="warning">{obj?.firebaseKey ? 'Update' : 'Create'} Album</Button>
 
     </Form>
   );
