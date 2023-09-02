@@ -1,9 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @next/next/no-img-element */
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Button } from 'react-bootstrap';
-import { getSingleAlbum } from '../../api/albumData';
+import viewAlbumDetails from '../../api/mergedData';
 
 export default function ViewAlbum() {
   const [albumDetails, setAlbumDetails] = useState({});
@@ -12,9 +13,9 @@ export default function ViewAlbum() {
   const { firebaseKey } = router.query;
 
   useEffect(() => {
-    getSingleAlbum(firebaseKey).then(setAlbumDetails);
+    viewAlbumDetails(firebaseKey).then(setAlbumDetails);
   }, [firebaseKey]);
-
+  console.warn(albumDetails);
   return (
     <div className="mt-5 d-flex flex-wrap">
       <div className="d-flex flex-column">
@@ -25,7 +26,7 @@ export default function ViewAlbum() {
           {albumDetails.title} by {albumDetails.artist}
         </h5>
         <h5>
-          GENRE: {albumDetails.genre}
+          GENRE: {albumDetails.genreObject?.genre_name}
         </h5>
         <Link href={`/album/edit/${firebaseKey}`} passHref>
           <Button variant="dark">EDIT</Button>

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { Button, FloatingLabel, Form } from 'react-bootstrap';
 import { useAuth } from '../utils/context/authContext';
 import { createAlbum, updateAlbum } from '../api/albumData';
+import { getGenres } from '../api/genreData';
 
 const initialState = {
   title: '',
@@ -15,9 +16,11 @@ const initialState = {
 function AlbumForm({ obj }) {
   const [formInput, setFormInput] = useState(initialState);
   const router = useRouter();
+  const [genres, setGenres] = useState([]);
   const { user } = useAuth();
   useEffect(() => {
     if (obj?.firebaseKey) setFormInput(obj);
+    getGenres().then(setGenres);
   }, [obj, user]);
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -66,17 +69,29 @@ function AlbumForm({ obj }) {
           required
         />
       </FloatingLabel>
-      <FloatingLabel controlId="floatinginput3" label="Genre" className="mb-3">
-        <Form.Control
-          as="textarea"
-          placeholder="Genre"
+      <FloatingLabel controlId="floatingSelect" label="Genre">
+        <Form.Select
+          aria-label="Genre"
           name="genre"
-          value={formInput.genre}
           onChange={handleChange}
+          className="mb-3"
+          value={formInput.genre}
           required
-        />
+        >
+          <option value="">Select Genre</option>
+          {
+            genres.map((genre) => (
+              <option
+                key={genre.firebaseKey}
+                value={genre.firebaseKey}
+              >
+                {genre.genre_name}
+              </option>
+            ))
+          }
+        </Form.Select>
       </FloatingLabel>
-      <FloatingLabel controlId="floatingInput4" label="Artist" className="mb-3">
+      <FloatingLabel controlId="floatingInput3" label="Artist" className="mb-3">
         <Form.Control
           type="text"
           placeholder="Artist"
