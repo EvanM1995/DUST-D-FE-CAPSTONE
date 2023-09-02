@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { Button } from 'react-bootstrap';
 import { getSingleAlbum } from '../../api/albumData';
 
 export default function ViewAlbum() {
@@ -25,6 +27,9 @@ export default function ViewAlbum() {
         <h5>
           GENRE: {albumDetails.genre}
         </h5>
+        <Link href={`/album/edit/${firebaseKey}`} passHref>
+          <Button variant="dark">EDIT</Button>
+        </Link>
       </div>
     </div>
   );

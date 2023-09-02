@@ -18,6 +18,10 @@ a {
 }
 
 body {
-  background-color: grey;
+  background-color: rgb(82, 82, 82);
+}
+
+.card {
+  background-color: rgb(233, 193, 13);
 }
 

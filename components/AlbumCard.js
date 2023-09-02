@@ -18,12 +18,9 @@ function AlbumCard({ albumObj, onUpdate }) {
         <Link href={`/album/${albumObj.firebaseKey}`} passHref>
           <Button variant="caution" className="m-2">{albumObj.title}</Button>
         </Link>
-        <Button variant="caution" onClick={deleteThisAlbum} className="m-2">
+        <Button variant="dark" onClick={deleteThisAlbum} className="m-2">
           REMOVE
         </Button>
-        <Link href={`/album/edit/${albumObj.firebaseKey}`} passHref>
-          <Button variant="caution">EDIT ALBUM</Button>
-        </Link>
       </Card.Body>
     </Card>
   );

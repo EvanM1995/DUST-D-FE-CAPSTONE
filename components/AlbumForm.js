@@ -87,7 +87,7 @@ function AlbumForm({ obj }) {
         />
       </FloatingLabel>
 
-      <Button type="submit" variant="warning">{obj?.firebaseKey ? 'Update' : 'Create'} Album</Button>
+      <Button type="submit" variant="dark">{obj?.firebaseKey ? 'Update' : 'Create'} Album Entry</Button>
 
     </Form>
   );
