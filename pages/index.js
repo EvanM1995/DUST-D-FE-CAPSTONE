@@ -18,7 +18,7 @@ function Collection() {
   }, []);
 
   return (
-    <div className="text-center my-4">
+    <div id="records" className="text-center my-4">
       <div className="d-flex flex-wrap">
         {records.map((record) => (
           <AlbumCard key={record.firebaseKey} albumObj={record} onUpdate={getAllTheRecords} />

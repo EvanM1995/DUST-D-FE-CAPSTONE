@@ -4,7 +4,7 @@ import { getSingleGenre } from './genreData';
 const viewAlbumDetails = (albumFirebaseKey) => new Promise((resolve, reject) => {
   getSingleAlbum(albumFirebaseKey)
     .then((albumObject) => {
-      getSingleGenre(albumObject.genre)
+      getSingleGenre(albumObject?.genre)
         .then((genreObject) => {
           resolve({ genreObject, ...albumObject });
         });
