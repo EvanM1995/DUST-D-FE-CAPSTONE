@@ -12,7 +12,7 @@ function AlbumCard({ albumObj, onUpdate }) {
   };
 
   return (
-    <Card style={{ width: '15rem', margin: '10px' }}>
+    <Card style={{ width: '15rem', margin: '35px' }}>
       <Card.Img variant="top" src={albumObj.image} alt={albumObj.title} style={{ height: '230px' }} />
       <Card.Body>
         <Link href={`/album/${albumObj.firebaseKey}`} passHref>
