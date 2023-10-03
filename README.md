@@ -1,62 +1,36 @@
-# React/Next.js Template
+DUSTED A Record Collections App by Evan Morgan.
 
-[See Live Demo of this Template](https://drt-next-js-template.netlify.app/)
+For this project, I wanted to make an easy to use app for record collectors to keep track of thier collections
+for easy organization.
 
-## Topics
-- [Get Started](#get-started)
-- [Starting the Project](#starting-the-project)
-- [Using axios](#using-axios)
-- [Deploying on Netlify](#deploying-on-netlify)
-___
-## Getting Started
-### Use Template
-#### 1. To get started, click the GREEN "Use this Template" button at the top of the repo
-<img width="915" alt="Screen Shot 2022-07-06 at 12 54 01 PM" src="https://user-images.githubusercontent.com/29741570/177612998-4aac9237-5a1e-4f13-8ae0-468587521564.png">
+FEATURES:
 
-#### 2. Make sure YOUR github account is selected in the dropdown and name your project
-<img width="763" alt="Screen Shot 2022-07-06 at 12 54 48 PM" src="https://user-images.githubusercontent.com/29741570/177613126-dd38f678-7553-4f27-8a4a-75680f14d71e.png">
+Using Google Authorization, users can log into their accounts and have access to the homescreen to start their collection
 
-#### 3. Clone your new repo to your local machine
-#### 4. Go to the **NEXT** section
+<img width="1063" alt="Screenshot 2023-10-02 at 5 48 38 PM" src="https://github.com/EvanM1995/DUST-D-FE-CAPSTONE/assets/125216636/61d9e314-23b2-483c-adfc-770a30cc6c94">
 
-## Starting the Project
-1. Create a Firebase project and set up authentication. Use [these videos](https://vimeo.com/showcase/codetracker-firebase) as a refresher if needed.
-1. Create a `.env` file at the root of the project
-1. Copy/Paste the contents of the `.env.sample` file to your newly created `.env` file.
-1. Copy over all of your Firebase values into the `.env` file.
-1. Open the `package.json` file and change the `name` property to the name of your application, and `author` to  your name.
-1. From your command line, be in the root directory and run `npm install` OR `npm i` for short.
-1. Next, run `npm run prepare`. This command sets up husky to track eslint errors on commit that will make your deploy fail on Netlify.
-1. To start your application, run `npm run dev`. THIS IS THE COMMAND YOU WILL USE TO RUN YOUR DEVELOPMENT SERVER FROM NOW ON.
-1. Open [http://localhost:3000](http://localhost:3000) with your browser.
+From the homescreen, users can browse thier records and view the details of each record
 
-### If you see this, you are set to go!
-<img width="450" alt="Screen Shot 2022-07-06 at 1 07 27 PM" src="https://user-images.githubusercontent.com/29741570/177615077-9b6a75bc-0260-4d29-bb88-bd95a3140687.png">
+<img width="1063" alt="Screenshot 2023-10-02 at 5 49 10 PM" src="https://github.com/EvanM1995/DUST-D-FE-CAPSTONE/assets/125216636/c60164da-ac26-49f7-a666-d5e3168b5b00">
 
+Users will also have the ability to update the record, if a detail is input incorrectly 
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+<img width="1063" alt="Screenshot 2023-10-02 at 5 49 22 PM" src="https://github.com/EvanM1995/DUST-D-FE-CAPSTONE/assets/125216636/807b558b-7b7d-4f9a-8208-36dc00d3983a">
 
-**NOTES:** 
-- If you see the following error, you did not follow all the setup steps correctly and failed to add your Firebase creds. Go back and do that NOW.
+To add to the collection, simply hit the "Add to Collection" tab, to pull up the from to add your record!
 
-<img width="1043" alt="Screen Shot 2022-07-06 at 11 18 45 AM" src="https://user-images.githubusercontent.com/29741570/177612501-c2628f18-4bbd-4de9-aae6-27ffba1172d6.png">
+<img width="1063" alt="Screenshot 2023-10-02 at 5 48 58 PM" src="https://github.com/EvanM1995/DUST-D-FE-CAPSTONE/assets/125216636/8f50c82c-beb0-43a5-95d9-148fec0a8ec8">
 
-### Deploying on Netlify
-Netlify will automatically detect your project and prepopulate the settings, but should something go wrong and it does not, here are the commands:
+To search through your record collection, you can utilize the search bar on the home screen to search through
+in real time on the homescreen.
 
-- Build Command: `npm run build`
-- Publish directory: `.next`
+If you would like to remove a record from your collection, you can hit the "Remove" button on the record to remove it.
 
-#### Additional Steps to Take on Netlify
-- Add Environmental Variables
-    - Any Enviromental variables you are using in your `.env` file should be added to Netlify. 
-        - Go to Site settings > Build & deploy > Environment > Environment variables and the keys and values there.
+FIGMA WIREFRAME:
+https://www.figma.com/file/oCk8Toz7KRfHuzER1pciC1/DUSTED-Capstone-Project-Wireframe?type=whiteboard&node-id=0-1&t=TdrRQuqSAbFtYorU-0
 
-- Update Firebase URL Settings
-    - In Firebase under Authentication select sign in methods, scroll to Authorized domains. Add your Netlify URL.
-        
-## Learn More about Next.js
-To learn more about Next.js, take a look at the following resources:
+DB DIAGRAM:
+https://dbdiagram.io/d/DUSTD-6487b29c722eb77494d7ea93
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+LOOM VIDEO:
+https://www.loom.com/share/a416f159a0fd4b1d84a88a53878fd107?sid=fdf1af17-0588-4a63-9f38-308be7dabab9
